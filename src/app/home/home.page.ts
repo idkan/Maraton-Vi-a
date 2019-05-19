@@ -15,7 +15,7 @@ export class HomePage {
       
     platform.ready().then(() => {
       
-      setTimeout(() => this.splash = false,3000);
+      setTimeout(() => this.splash = false,4000);
       splashscreen.hide();
     });
   }
