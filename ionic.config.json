@@ -1,0 +1,7 @@
+{
+  "name": "MaratonVina",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
