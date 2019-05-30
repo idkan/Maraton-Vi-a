@@ -1,6 +1,13 @@
 import { Component } from '@angular/core';
 import { NavController, Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+import { ScrollDetail } from '@ionic/core';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+import { FileTransfer } from '@ionic-native/file-transfer/ngx';
+import { FileOpener } from '@ionic-native/file-opener/ngx';
+import { DocumentViewer, DocumentViewerOptions } from '@ionic-native/document-viewer/ngx';
+import { File } from '@ionic-native/File/ngx';
+
 
 @Component({
   selector: 'app-home',
@@ -9,15 +16,67 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 })
 export class HomePage {
 
-  splash = true;
   
-  constructor(public platform: Platform, public splashscreen: SplashScreen) {
+  splash = true;
+  showToolbar = false;
+
+  constructor(
+    public platform: Platform, 
+    public splashscreen: SplashScreen,
+    private iab: InAppBrowser,
+    private file: File,
+    private fileTransfer:FileTransfer,
+    private fileOpener: FileOpener,
+    private documentPDF: DocumentViewer
+    ) {
       
-    platform.ready().then(() => {
-      
+    screen.orientation.lock('portrait'); 
+    platform.ready().then(() => { 
       setTimeout(() => this.splash = false,4000);
-      splashscreen.hide();
+      this.splashscreen.hide(); 
+
+      //Set time to Maratón
+      let countDownDate = new Date("Oct 06, 2019 08:00:00").getTime();
+
+      // Update the count down every 1 second
+      let x = setInterval(function () {
+        //Get Todays date and time.
+        let now = new Date().getTime();
+        //Find the discante between now and the count down date.
+        let distance = countDownDate - now;
+        // Time calculations for days, hours, minutes and seconds
+        let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        //console.log(now, "now", "countDownDate", countDownDate, "distance", distance, "days", days);
+
+        // Output the result in an element with id="demo"
+        document.getElementById("cronometro").innerHTML = days + "DÍAS " + hours + "HRS "
+          + minutes + "MIN " + seconds + "SEG ";
+
+        // If the count down is over, write some text 
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("cronometro").innerHTML = "EXPIRED";
+        }
+      }, 1000);
     });
+  }
+
+  
+
+
+
+  showTerms(){
+    this.iab.create('https://www.google.com/', '_system');
+  }
+
+  onScroll($event: CustomEvent<ScrollDetail>) {
+    if ($event && $event.detail && $event.detail.scrollTop) {
+      const scrollTop = $event.detail.scrollTop;
+      this.showToolbar = scrollTop >= 225;
+    }
   }
 
 }
