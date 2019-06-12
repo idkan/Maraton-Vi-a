@@ -66,6 +66,15 @@ ion-grid {
   background-position: center;
   text-align: center;
   height: 3.5em;
+
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0); 
+  -webkit-transition: -webkit-transform .5s cubic-bezier(.12,.72,.29,1);
+  transition: -webkit-transform .5s cubic-bezier(.12,.72,.29,1); 
+  transition: transform .5s cubic-bezier(.12,.72,.29,1); 
+  transition: transform .5s cubic-bezier(.12,.72,.29,1),-webkit-transform .5s cubic-bezier(.12,.72,.29,1); 
+  -webkit-box-shadow: 0 4px 16px rgba(0,0,0,.12); 
+  box-shadow: 0 4px 16px rgba(0,0,0,.12);
 }
 
 #timer {
@@ -83,6 +92,13 @@ ion-grid {
   font-family: 'Montserrat Font';
   font-weight: bold;
   margin-top: auto;
+}
+
+.btn-gallery {
+  background-image:url('../../assets/media/btn-galeria.PNG')!important;
+  background-repeat:no-repeat!important;
+  background-position:center!important;
+  height: 2.563em;
 }
 
 .card-app {
@@ -252,7 +268,7 @@ ion-grid {
 }
 
 .sc-ion-card-ios-h  {
-  margin-top: 0px!important;
+  margin-top: 6px!important;
 }
 
 
