@@ -3,14 +3,86 @@
 ion-toolbar {
     --background: transparent;
     --ion-color-base: transparent !important;
+    --min-height: 19px;
 }  
 
 ion-content{
   background: #f7f6f6;
 }
 
+ion-grid {
+  margin-bottom: -3px;
+}
+
 .btn-base{
+  color: #f7f6f6;
+  font-size: 1.5em;
+  font-family: 'Montserrat Font';
+  font-weight: bold;
+
+  width: 100%;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0); 
+  -webkit-transition: -webkit-transform .5s cubic-bezier(.12,.72,.29,1);
+  transition: -webkit-transform .5s cubic-bezier(.12,.72,.29,1); 
+  transition: transform .5s cubic-bezier(.12,.72,.29,1); 
+  transition: transform .5s cubic-bezier(.12,.72,.29,1),-webkit-transform .5s cubic-bezier(.12,.72,.29,1); 
+  -webkit-box-shadow: 0 4px 16px rgba(0,0,0,.12); 
+  box-shadow: 0 4px 16px rgba(0,0,0,.12);
+}
+
+.btn-info {
+  background-color: #ffd915;
   color: #000000;
+  height: 3.250em;
+  font-size: 1em;
+  font-weight: normal;
+}
+
+.btn-tracking {
+  background-image: url('../../assets/media/btn-tracking.PNG');
+  background-repeat: no-repeat;
+  background-position: top;
+  height: 3.250em;
+}
+
+.btn-mapa {
+  background-image: url('../../assets/media/btn-mapa.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 6.063em;
+}
+
+.btn-register {
+  background-image:url('../../assets/media/btn-inscribete.jpg')!important;
+  background-repeat:no-repeat!important;
+  background-position:center!important;
+  height: 2.563em;
+}
+
+.div-timer{
+  background-image: url('../../assets/media/Reloj.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  height: 3.5em;
+}
+
+#timer {
+  color: #f7f6f6;
+  font-size: 1.5em;
+  font-family: 'Montserrat Font';
+  font-weight: bold;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#txt-timer{
+  color: #ffd915;
+  font-size: .9em;
+  font-family: 'Montserrat Font';
+  font-weight: bold;
+  margin-top: auto;
 }
 
 .card-app {
@@ -179,5 +251,33 @@ ion-content{
   100% { -webkit-transform: matrix3d(1, 0, 0, 0, 0.839, 1, 0, 0, 0, 0, 1, 0, 500, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0.839, 1, 0, 0, 0, 0, 1, 0, 500, 0, 0, 1); } 
 }
 
+.sc-ion-card-ios-h  {
+  margin-top: 0px!important;
+}
 
+
+.line-decoration {
+  padding-bottom: 10px;
+}
+
+.left-div {
+  width: 50%;
+  height: 5px;
+  background-color: #002a3e;
+  float: left; 
+}
+
+.center-div {
+  width: 20%;
+  height: 5px;
+  background-color: #ffd915;
+  float: left;
+}
+
+.right-div {
+  width: 30%;
+  height: 5px;
+  background-color: #002a3e;
+  float: left;
+}
 

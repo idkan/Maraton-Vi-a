@@ -52,13 +52,13 @@ export class HomePage {
         //console.log(now, "now", "countDownDate", countDownDate, "distance", distance, "days", days);
 
         // Output the result in an element with id="demo"
-        document.getElementById("cronometro").innerHTML = days + "DÍAS " + hours + "HRS "
-          + minutes + "MIN " + seconds + "SEG ";
+        document.getElementById("timer").innerHTML = days + " | " + hours + " | "
+          + minutes + " | " + seconds;
 
         // If the count down is over, write some text 
         if (distance < 0) {
           clearInterval(x);
-          document.getElementById("cronometro").innerHTML = "EXPIRED";
+          document.getElementById("timer").innerHTML = "Llegó la Hora";
         }
       }, 1000);
     });
@@ -69,7 +69,14 @@ export class HomePage {
 
 
   showTerms(){
-    this.iab.create('https://www.google.com/', '_system');
+    this.fileOpener.open('../../assets/documents/Bases.pdf', 'application/pdf')
+    .then(() => console.log('File is opend'))
+    .catch(e => console.log('Error opening file ', e));
+    //this.iab.create('https://www.google.com/', '_system');
+  }
+
+  registerPage(){
+    this.iab.create('https://www.eventrid.cl/prokart/eventos/consalud-maraton-de-vina-del-mar-2019/participantes/inscripcion/iframe','_blank');
   }
 
   onScroll($event: CustomEvent<ScrollDetail>) {

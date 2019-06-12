@@ -1,11 +1,12 @@
 <div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
   <div class="flb">
     <div class="Aligner-item Aligner-item--top"></div>
-    <img src="../../assets/Logo.png">
+    <img src="../../assets/media/Logo.png">
     <div class="Aligner-item Aligner-item--bottom"></div>
   </div>
 </div>
 
+<!--
 <ion-header>
   <ion-toolbar color="secondary"  [class.show-background]="showToolbar">
     <ion-buttons slot="start">
@@ -16,66 +17,56 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
+-->
+<ion-toolbar color="secondary"  [class.show-background]="showToolbar">
 
+</ion-toolbar>
 
 <ion-content fullscreen>
-    <ion-card class="welcome-card">
-      <ion-img src="../../assets/header-vina-2019.png"></ion-img>
-      <ion-card-header>
-        <ion-card-subtitle>Maratón 2019</ion-card-subtitle>
-        <ion-card-title>Maratón Viña del Mar</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <p>Información sobre el maratón.</p>
-      </ion-card-content>
-    </ion-card>
+  <ion-img src="../../assets/header-vina-2019.png"></ion-img>
 
-    <ion-card class="welcome-card card-app">
-      <ion-button color="warning" expand="full" (click)="showTerms()" class="btn-base">Ver Bases</ion-button>
-    </ion-card>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <button (click)="showTerms()" class="btn-base btn-info ion-text-center">Ver Bases</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 
-    <ion-card>
-      <ion-grid>
-        <ion-row>
-          <ion-col>
-            <div class="ion-text-center ion-text-uppercase">
-              live tracking
-            </div>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-card>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+            <button (click)="showTerms()" class="btn-base btn-tracking ion-text-center ion-text-uppercase">live tracking</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
     
-    <ion-card>
-      <ion-grid>
+    <ion-grid>
         <ion-row>
           <ion-col>
-            <div class="ion-text-center ion-text-uppercase">
-              ruta del evento
-            </div>
+              <button (click)="showTerms()" class="btn-base btn-mapa  ion-text-center ion-text-uppercase">ruta del evento</button>
           </ion-col>
         </ion-row>
       </ion-grid>
-    </ion-card>
  
-    <ion-card>
-      <ion-grid>
+    <ion-grid>
         <ion-row>
           <ion-col>
-            <div class="ion-text-center ion-text-uppercase">
-              inscribete
-            </div>
+              <button color="warning" expand="full" (click)="registerPage()" 
+              value="Inscribete" class="btn-base btn-register ion-text-center ion-text-uppercase">Inscribete</button>
           </ion-col>
         </ion-row>
-      </ion-grid> 
-    </ion-card>
+    </ion-grid>
 
-    <ion-card class="welcome-card">
-      <div class="ion-text-center">
-          <p id="cronometro"></p>
-      </div>
-    </ion-card>
-
+    <ion-grid>
+      <ion-row>
+        <ion-col class="div-timer ion-tex-center ion-text-uppercase">
+            <p id="timer"></p>
+            <p id="txt-timer"> Días Hrs Min Seg</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    
     <ion-card>
       <ion-grid>
         <ion-row>
@@ -88,21 +79,39 @@
       </ion-grid>
     </ion-card>
 
-    <ion-grid>
+    <ion-grid no-padding class="social-media-section">
       <ion-row>
-        <ion-col>
+        <ion-col size="4">
           <ion-card>
-            <div class="ion-text-center"><ion-icon name="logo-facebook" size="large"></ion-icon></div> 
+            <div class="ion-text-center"><ion-icon name="logo-facebook" size="large"></ion-icon>
+              <div class="line-decoration">
+                <div class="left-div"></div>
+                <div class="center-div"></div>
+                <div class="right-div"></div>
+              </div>
+            </div> 
           </ion-card>
         </ion-col>
-        <ion-col>
+        <ion-col size="4">
           <ion-card>
-            <div class="ion-text-center"><ion-icon name="logo-instagram" size="large"></ion-icon></div> 
+            <div class="ion-text-center"><ion-icon name="logo-instagram" size="large"></ion-icon>
+              <div class="line-decoration">
+                <div class="left-div"></div>
+                <div class="center-div"></div>
+                <div class="right-div"></div>
+              </div>
+            </div> 
           </ion-card>
         </ion-col>
-        <ion-col>
+        <ion-col size="4">
           <ion-card>
-            <div class="ion-text-center"><ion-icon name="logo-twitter" size="large"></ion-icon></div> 
+            <div class="ion-text-center"><ion-icon name="logo-twitter" size="large"></ion-icon>
+              <div class="line-decoration">
+                <div class="left-div"></div>
+                <div class="center-div"></div>
+                <div class="right-div"></div>
+              </div>
+            </div> 
           </ion-card>
         </ion-col>
       </ion-row>
