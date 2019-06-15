@@ -3,11 +3,10 @@ import { NavController, Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { ScrollDetail } from '@ionic/core';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+import { File } from '@ionic-native/File/ngx';
 import { FileTransfer } from '@ionic-native/file-transfer/ngx';
 import { FileOpener } from '@ionic-native/file-opener/ngx';
 import { DocumentViewer, DocumentViewerOptions } from '@ionic-native/document-viewer/ngx';
-import { File } from '@ionic-native/File/ngx';
-
 
 @Component({
   selector: 'app-home',
@@ -27,7 +26,7 @@ export class HomePage {
     private file: File,
     private fileTransfer:FileTransfer,
     private fileOpener: FileOpener,
-    private documentPDF: DocumentViewer
+    private documentViewer: DocumentViewer
     ) {
       
     screen.orientation.lock('portrait'); 
@@ -69,10 +68,20 @@ export class HomePage {
 
 
   showTerms(){
-    this.fileOpener.open('../../assets/documents/Bases.pdf', 'application/pdf')
-    .then(() => console.log('File is opend'))
-    .catch(e => console.log('Error opening file ', e));
-    //this.iab.create('https://www.google.com/', '_system');
+    let filePath = this.file.applicationDirectory + 'www/assets/documents';
+
+    if(this.platform.is('android')) {
+      let fakeName = Date.now();
+      this.file.copyFile(filePath, 'Bases.pdf', this.file.dataDirectory, `${fakeName}.pdf`)
+      .then(result => { this.fileOpener.open(result.nativeURL, 'application/pdf');
+      });
+    } else {
+      const options: DocumentViewerOptions = {
+        title: 'Bases'
+      }
+      this.documentViewer.viewDocument(`${filePath}/Bases.pdf`, 'application/pdf', options);
+    }
+
   }
 
   registerPage(){
