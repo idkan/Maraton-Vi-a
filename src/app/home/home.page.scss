@@ -14,6 +14,10 @@ ion-grid {
   margin-bottom: -3px;
 }
 
+button {
+  width: 100%;
+  background-color: #ffffff;
+}
 .btn-base{
   color: #f7f6f6;
   font-size: 1.5em;
@@ -53,11 +57,28 @@ ion-grid {
   height: 6.063em;
 }
 
+.left-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.right-icon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
 .btn-register {
   background-image:url('../../assets/media/btn-inscribete.jpg')!important;
   background-repeat:no-repeat!important;
   background-position:center!important;
   height: 2.563em;
+}
+
+.padding-grid {
+  //padding: 10px;
+  padding: 5px 10px 6px 10px;
 }
 
 .div-timer{
@@ -99,6 +120,19 @@ ion-grid {
   background-repeat:no-repeat!important;
   background-position:center!important;
   height: 2.563em;
+}
+
+.social-media-section button{
+  padding: 0;
+  border: 1px solid #c0c0c0;
+}
+
+.social-media-section ion-icon {
+  color: #606060;
+}
+
+.border-grid {
+  border: 1px solid #c0c0c0;
 }
 
 .card-app {
@@ -271,9 +305,9 @@ ion-grid {
   margin-top: 6px!important;
 }
 
-
 .line-decoration {
-  padding-bottom: 10px;
+  //margin: 0 -6px 0 -6px;
+  padding-bottom: 12px;
 }
 
 .left-div {
@@ -297,3 +331,17 @@ ion-grid {
   float: left;
 }
 
+ion-footer {
+  padding-bottom: 12px;
+}
+
+ion-footer ion-title {
+  font-size: .56em;
+}
+
+ion-footer ion-img {
+  position: absolute;
+  top: 0;
+  right: 34%;
+  width: 5%;
+}

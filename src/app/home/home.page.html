@@ -44,7 +44,12 @@
     <ion-grid>
         <ion-row>
           <ion-col>
-              <button (click)="showTerms()" class="btn-base btn-mapa  ion-text-center ion-text-uppercase">ruta del evento</button>
+              <button (click)="showTerms()" class="btn-base btn-mapa  ion-text-center ion-text-uppercase">
+                <ion-icon name="map" class="left-icon"></ion-icon>                
+                ruta del evento
+                <ion-icon name="pin" class="right-icon">
+                </ion-icon>
+              </button>
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -58,7 +63,7 @@
         </ion-row>
     </ion-grid>
 
-    <ion-grid>
+    <ion-grid padding class="padding-grid">
       <ion-row>
         <ion-col class="div-timer ion-tex-center ion-text-uppercase">
             <p id="timer"></p>
@@ -71,15 +76,17 @@
         <ion-row>
           <ion-col>
               <button color="warning" expand="full" (click)="registerPage()" 
-              value="Inscribete" class="btn-base btn-gallery ion-text-center ion-text-uppercase">geleria</button>
+              value="Inscribete" class="btn-base btn-gallery ion-text-center ion-text-uppercase">
+              <ion-icon name="camera" class="left-icon"></ion-icon>
+              geleria</button>
           </ion-col>
         </ion-row>
     </ion-grid>
 
-    <ion-grid no-padding class="social-media-section">
+    <ion-grid class="social-media-section">
       <ion-row>
         <ion-col size="4">
-          <ion-card>
+          <button (click)="registerPage()" class="">
             <div class="ion-text-center"><ion-icon name="logo-facebook" size="large"></ion-icon>
               <div class="line-decoration">
                 <div class="left-div"></div>
@@ -87,10 +94,11 @@
                 <div class="right-div"></div>
               </div>
             </div> 
-          </ion-card>
+          </button>
         </ion-col>
+
         <ion-col size="4">
-          <ion-card>
+          <button (click)="registerPage()" class="">
             <div class="ion-text-center"><ion-icon name="logo-instagram" size="large"></ion-icon>
               <div class="line-decoration">
                 <div class="left-div"></div>
@@ -98,10 +106,10 @@
                 <div class="right-div"></div>
               </div>
             </div> 
-          </ion-card>
+          </button>
         </ion-col>
         <ion-col size="4">
-          <ion-card>
+          <button (click)="registerPage()" class="">
             <div class="ion-text-center"><ion-icon name="logo-twitter" size="large"></ion-icon>
               <div class="line-decoration">
                 <div class="left-div"></div>
@@ -109,34 +117,33 @@
                 <div class="right-div"></div>
               </div>
             </div> 
-          </ion-card>
+          </button>
         </ion-col>
       </ion-row>
     </ion-grid>
 
-    <ion-card>
-      <ion-grid>
-        <ion-row>
-          <ion-col>
-            <div class="ion-text-center">Viña del Mar, Chile</div>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-card>
+
+    <ion-grid padding class="padding-grid">
+      <ion-row class="border-grid">
+        <ion-col class="ion-text-center">
+            <p class="">Viña del Mar, Chile</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
     
-    <ion-card>
-      <ion-grid>
-        <ion-row>
-          <ion-col>
-            <div class="ion-text-center ion-text-uppercase">Patrocinadores</div>
+    <ion-grid padding class="padding-grid">
+        <ion-row class="border-grid">
+          <ion-col class="ion-text-center">
+              <p class="">Patrocinadores</p>
           </ion-col>
         </ion-row>
       </ion-grid>
-    </ion-card>
 
     <ion-footer>
       <ion-toolbar>
-        <ion-title>Powered by</ion-title>
+        <ion-title class="ion-text-center">Powered by
+            <ion-img src="../../assets/media/LogoNegros.png"></ion-img>
+        </ion-title>
       </ion-toolbar>
     </ion-footer>
 
