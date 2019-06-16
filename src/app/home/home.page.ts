@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NavController, Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { ScrollDetail } from '@ionic/core';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
@@ -7,11 +6,15 @@ import { File } from '@ionic-native/File/ngx';
 import { FileTransfer } from '@ionic-native/file-transfer/ngx';
 import { FileOpener } from '@ionic-native/file-opener/ngx';
 import { DocumentViewer, DocumentViewerOptions } from '@ionic-native/document-viewer/ngx';
+import { AppAvailability } from '@ionic-native/app-availability/ngx';
+import { Platform } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
+  providers: [AppAvailability]
 })
 export class HomePage {
 
@@ -26,7 +29,8 @@ export class HomePage {
     private file: File,
     private fileTransfer:FileTransfer,
     private fileOpener: FileOpener,
-    private documentViewer: DocumentViewer
+    private documentViewer: DocumentViewer,
+    private appAvailability: AppAvailability
     ) {
       
     screen.orientation.lock('portrait'); 
@@ -86,6 +90,36 @@ export class HomePage {
 
   registerPage(){
     this.iab.create('https://www.eventrid.cl/prokart/eventos/consalud-maraton-de-vina-del-mar-2019/participantes/inscripcion/iframe','_blank');
+  }
+
+  launchExternalApp(iosSchemaName: string, androidPackageName: string, appUrl: string, httpUrl: string, username: string) {
+    let app: string;
+    
+    if(this.platform.is('ios')) {
+      app = iosSchemaName;
+    } else if(this.platform.is('android')) {
+      app = androidPackageName;
+    } else {
+      this.iab.create(httpUrl + username, '_system');
+      return;
+    }
+    this.appAvailability.check(app)
+    // Succes Callback
+    .then(() => {this.iab.create(appUrl + username, '_system');},
+    // Error Callback
+    (data) => {this.iab.create(httpUrl + username, '_system');});
+  }
+
+  openFacebook(username: string) {
+    this.launchExternalApp('fb://','com.facebook.orca', 'fb://page/', 'https://www.facebook.com/', username);
+  }
+
+  openInstagram(username: string) {
+    this.launchExternalApp('instagram://', 'com.instagram.android', 'instagram://user?username=', 'https://www.instagram.com/', username);
+  }
+  
+  openTwitter(username: string) {
+    this.launchExternalApp('twitter://', 'com.twitter.android', 'twitter://user?screen_name=', 'https://twitter.com/', username);
   }
 
   onScroll($event: CustomEvent<ScrollDetail>) {
