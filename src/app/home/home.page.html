@@ -1,3 +1,4 @@
+
 <div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
   <div class="flb">
     <div class="Aligner-item Aligner-item--top"></div>
@@ -6,23 +7,19 @@
   </div>
 </div>
 
-<!--
-<ion-header>
+<!--<ion-header>
   <ion-toolbar color="secondary"  [class.show-background]="showToolbar">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
+      <ion-title class="ion-text-uppercase ion-text-center">Menu</ion-title>
     </ion-buttons>
-    <ion-title>
-      Home  
-    </ion-title>
   </ion-toolbar>
-</ion-header>
--->
-<ion-toolbar color="secondary"  [class.show-background]="showToolbar">
+</ion-header> -->
+<ion-toolbar>
 
 </ion-toolbar>
 
-<ion-content fullscreen>
+<ion-content fullscreen [scrollEvents]="true" (ionScroll)="onScroll($event)">
   <ion-img src="../../assets/media/header-vina-2019.png"></ion-img>
 
     <ion-grid>
@@ -36,7 +33,7 @@
     <ion-grid>
       <ion-row>
         <ion-col>
-            <button (click)="showTerms()" class="btn-base btn-tracking ion-text-center ion-text-uppercase">live tracking</button>
+            <button (click)="liveTracking()" class="btn-base btn-tracking ion-text-center ion-text-uppercase">live tracking</button>
         </ion-col>
       </ion-row>
     </ion-grid>
@@ -44,7 +41,7 @@
     <ion-grid>
         <ion-row>
           <ion-col>
-              <button (click)="showTerms()" class="btn-base btn-mapa  ion-text-center ion-text-uppercase">
+              <button (click)="showRoute()" class="btn-base btn-mapa  ion-text-center ion-text-uppercase">
                 <ion-icon name="map" class="left-icon"></ion-icon>                
                 ruta del evento
                 <ion-icon name="pin" class="right-icon">
@@ -75,7 +72,7 @@
     <ion-grid>
         <ion-row>
           <ion-col>
-              <button color="warning" expand="full" (click)="registerPage()" 
+              <button color="warning" expand="full" (click)="showGallery()" 
               value="Inscribete" class="btn-base btn-gallery ion-text-center ion-text-uppercase">
               <ion-icon name="camera" class="left-icon"></ion-icon>
               geleria</button>

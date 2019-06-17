@@ -3,8 +3,13 @@
 ion-toolbar {
     --background: transparent;
     --ion-color-base: transparent !important;
-    --min-height: 19px;
+    --min-height: 20px;
 }  
+
+.show-background {
+  background-color: #ffd915;
+  color: #000000;
+}
 
 ion-content{
   background: #f7f6f6;
@@ -143,6 +148,8 @@ button {
   max-height: 35vh;
   overflow: hidden;
 }
+
+// Animated Splash Screen Style
 
 #custom-overlay {
   position: fixed;

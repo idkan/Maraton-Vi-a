@@ -9,6 +9,7 @@ import {ScreenOrientation} from "@ionic-native/screen-orientation";
   templateUrl: 'app.component.html'
 })
 export class AppComponent {
+
   public appPages = [
     {
       title: 'Home',
@@ -27,14 +28,11 @@ export class AppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar
   ) {
+
     this.initializeApp();
   }
 
   initializeApp() {
-    screen.orientation.lock('portrait');
-    this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
-    });
+
   }
 }
