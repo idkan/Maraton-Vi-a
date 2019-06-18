@@ -17,8 +17,6 @@ import { Platform, NavController } from '@ionic/angular';
 })
 export class HomePage {
 
-  
-  splash = true;
   showToolbar = false;
 
   constructor(
@@ -37,14 +35,12 @@ export class HomePage {
 
       // Function to show animated splash screeen.
       platform.ready().then(() => { 
-      setTimeout(() => this.splash = false,4000);
-      this.splashscreen.hide(); 
-      
-      // Function to Set time to Maratón
-      let countDownDate = new Date("Oct 06, 2019 08:00:00").getTime();
+       
+        // Function to Set time to Maratón
+        let countDownDate = new Date("Oct 06, 2019 08:00:00").getTime();
 
-      // Update the count down every 1 second
-      let x = setInterval(function () {
+        // Update the count down every 1 second
+        let x = setInterval(function () {
         //Get Todays date and time.
         let now = new Date().getTime();
         //Find the discante between now and the count down date.

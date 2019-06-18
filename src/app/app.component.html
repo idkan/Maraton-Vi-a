@@ -1,5 +1,14 @@
-
 <ion-app>
+
+  <!-- Animated Splash Screen -->
+  <div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
+    <div class="flb">
+      <div class="Aligner-item Aligner-item--top"></div>
+      <img src="../assets/media/Logo.png">
+      <div class="Aligner-item Aligner-item--bottom"></div>
+    </div>
+  </div>
+  
   <ion-split-pane>
     <ion-menu>
       <ion-header>
