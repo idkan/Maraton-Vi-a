@@ -1,0 +1,18 @@
+// These rules style only will be apply to route evente page.
+
+ion-toolbar {
+    --background: #ffd915;
+    --color: #000000;
+}
+
+.swiper-slide {
+    display: block!important;
+}
+
+ion-slide > h2 {
+    margin-top: 2.8rem;
+}
+
+ion-slide > p {
+    text-align: left;
+}
