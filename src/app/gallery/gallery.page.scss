@@ -1,4 +1,12 @@
+// These rules style only will be apply to gallery page.
+
 ion-toolbar {
     --background: #ffd915;
     --color: #000000;
+}
+
+.image-container {
+    min-width: 200px;
+    min-height: 280px;
+    background-size: cover;
 }

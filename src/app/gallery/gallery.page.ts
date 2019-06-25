@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
+import * as $ from 'jquery';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-gallery',
@@ -7,9 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GalleryPage implements OnInit {
 
-  constructor() { }
+  sliderOpts = {
+    zoom: false,
+    slidesPerView: 1.5,
+    spaceBetween: 20,
+    centeredSlides: true
+  };
 
-  ngOnInit() {
+  galleryType = 'regular';
+  
+  constructor(private modalController: ModalController) {
+   }
+
+   openPreview(img) {
+    this.modalController.create({
+      component: GalleryPage,
+      componentProps: {
+        img: img
+      }
+    }).then(modal => {
+      modal.present();
+    });
   }
+  ngOnInit() {
 
+  }
 }
