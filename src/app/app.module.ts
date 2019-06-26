@@ -16,13 +16,15 @@ import { FileTransfer } from '@ionic-native/file-transfer/ngx';
 import { DocumentViewer } from '@ionic-native/document-viewer/ngx';
 import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 import { GalleryPageModule } from './gallery/gallery.module';
-
+import { WeatherService } from '../app/weather.service'
+import { HttpModule } from '@angular/http'
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(),
     AppRoutingModule,
     GalleryPageModule
@@ -36,7 +38,8 @@ import { GalleryPageModule } from './gallery/gallery.module';
     FileOpener,
     FileTransfer,
     ScreenOrientation,
-    DocumentViewer
+    DocumentViewer,
+    WeatherService
   ],
   bootstrap: [AppComponent]
 })

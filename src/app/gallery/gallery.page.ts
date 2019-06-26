@@ -1,5 +1,4 @@
 import { Component, OnInit, NgModule } from '@angular/core';
-import * as $ from 'jquery';
 import { ModalController } from '@ionic/angular';
 
 @Component({

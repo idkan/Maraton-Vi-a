@@ -111,19 +111,75 @@
 
     <ion-grid padding class="padding-grid">
       <ion-row class="border-grid">
-        <ion-col class="ion-text-center">
-            <p class="">Viña del Mar, Chile</p>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-    
-    <ion-grid padding class="padding-grid">
-        <ion-row class="border-grid">
-          <ion-col class="ion-text-center">
-              <p class="">Patrocinadores</p>
+        <ion-row class="">
+          <ion-col align-self-center >
+            <p>Viña del Mar, Chile</p>
           </ion-col>
         </ion-row>
-      </ion-grid>
+        <ion-row>
+          <ion-col *ngIf="weather; else elseBlock">
+              <p>{{weather.daypart[0].temperatureHeatIndex[1]}}&deg;C</p>
+              <ng-template #elseBlock>{{weather.daypart[0].temperatureHeatIndex[0]}}&deg;C</ng-template>
+              <p>Temperatura</p>
+          </ion-col>
+          <ion-col *ngIf="weather; else elseBlock2">
+            <img  src="../../assets/media/PNGs/{{weather.daypart[0].iconCode[1]}}.png" alt="">
+            <p>{{weather.daypart[0].wxPhraseLong[1]}}</p>
+            <ng-template #elseBlock2>
+              <img src="../../assets/media/PNGs/{{weather.daypart[0].iconCode[0]}}.png" alt="">
+              <p>{{weather.daypart[0].wxPhraseLong[0]}}</p>
+            </ng-template>
+          </ion-col>
+        </ion-row>
+        <ion-row >
+          <ion-col>
+              <p>{{weather.dayOfWeek[1]}}</p>
+              <img src="../../assets/media/PNGs/{{weather.daypart[0].iconCode[2]}}.png" alt="">
+              <p>{{weather.temperatureMax[1]}}&deg;C</p>
+              <p>{{weather.temperatureMin[1]}}&deg;C</p>
+          </ion-col>
+          <ion-col>
+              <p>{{weather.dayOfWeek[2]}}</p>
+              <img src="../../assets/media/PNGs/{{weather.daypart[0].iconCode[4]}}.png" alt="">
+              <p>{{weather.temperatureMax[2]}}&deg;C</p>
+              <p>{{weather.temperatureMin[2]}}&deg;C</p>
+          </ion-col>
+          <ion-col>
+              <p>{{weather.dayOfWeek[3]}}</p>
+              <img src="../../assets/media/PNGs/{{weather.daypart[0].iconCode[6]}}.png" alt="">
+              <p>{{weather.temperatureMax[3]}}&deg;C</p>
+              <p>{{weather.temperatureMin[3]}}&deg;C</p>
+          </ion-col>
+        </ion-row>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid padding class="padding-grid">
+      <ion-row class="border-grid">
+        <h4 class="ion-text-center">Patrocinadores</h4>
+        <ion-row>
+          <ion-col><img class="sponsorsImg" src="../../assets/media/istLogo.png" alt=""></ion-col>
+          <ion-col><img class="sponsorsImg" src="../../assets/media/mitsubishiLogo.png" alt=""></ion-col>
+          <ion-col><img class="sponsorsImg" src="../../assets/media/mallmarinaLogo.png" alt=""></ion-col>
+          <ion-col><img class="sponsorsImg" src="../../assets/media/uvmLogo.png" alt=""></ion-col>
+          <ion-col><img src="../../assets/media/gatoradeLogo.png" alt="" class="sponsorsImg"></ion-col>
+          <ion-col><img src="../../assets/media/duocucLogo.png" alt="" class="sponsorsImg"></ion-col>
+          <ion-col><img src="../../assets/media/sportsaludLogo.png" alt="" class="sponsorsImg"></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col><img src="../../assets/media/vinaEscudo.png" alt="" class="sponsorsImg"></ion-col>
+          <ion-col><img src="../../assets/media/conconEscudo.svg" alt="" class="sponsorsImg"></ion-col>
+          <ion-col><img src="../../assets/media/armadaEscudo.png" alt="" class="sponsorsImg"></ion-col>
+          <ion-col><img src="../../assets/media/valparaisoLogo.png" alt="" class="sponsorsImg"></ion-col>
+          <ion-col><img src="../../assets/media/gobLogo.png" alt="" class="sponsorsImg"></ion-col>
+          <ion-col><img src="../../assets/media/deporteLogo.png" alt="" class="sponsorsImg"></ion-col>
+          <ion-col><img src="../../assets/media/prokartLogo.svg" alt="" class="sponsorsImg"></ion-col>
+          <ion-col><img src="../../assets/media/fullLogo.png" alt="" class="sponsorsImg"></ion-col>
+          <ion-col><img src="../../assets/media/iaafLogo.png" alt="" class="sponsorsImg"></ion-col>
+          <ion-col><img src="../../assets/media/atleticaLogo.png" alt="" class="sponsorsImg"></ion-col>
+        </ion-row>
+      </ion-row>
+    </ion-grid>
 
     <ion-footer>
       <ion-toolbar>

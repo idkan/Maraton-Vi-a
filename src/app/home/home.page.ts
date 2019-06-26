@@ -7,7 +7,7 @@ import { FileOpener } from '@ionic-native/file-opener/ngx';
 import { DocumentViewer, DocumentViewerOptions } from '@ionic-native/document-viewer/ngx';
 import { AppAvailability } from '@ionic-native/app-availability/ngx';
 import { Platform, NavController } from '@ionic/angular';
-
+import { WeatherService } from '../weather.service';
 
 @Component({
   selector: 'app-home',
@@ -17,6 +17,7 @@ import { Platform, NavController } from '@ionic/angular';
 })
 export class HomePage {
 
+  weather:any;
   showToolbar = false;
 
   constructor(
@@ -27,7 +28,8 @@ export class HomePage {
     private file: File,
     private fileOpener: FileOpener,
     private documentViewer: DocumentViewer,
-    private appAvailability: AppAvailability
+    private appAvailability: AppAvailability,
+    private weatherService: WeatherService
     ) {
       
       // Function to block screen orientation.
@@ -97,11 +99,6 @@ export class HomePage {
     this.iab.create('https://www.eventrid.cl/prokart/eventos/consalud-maraton-de-vina-del-mar-2019/participantes/inscripcion/iframe','_blank');
   }
 
-  // Method to show Gallery Section
-  showGallery() {
-    this.navCtrl.navigateForward("/gallery");
-  }
-
   // Method to select application opening options.
   launchExternalApp(iosSchemaName: string, androidPackageName: string, appUrl: string, httpUrl: string, username: string) {
     let app: string;
@@ -137,7 +134,20 @@ export class HomePage {
   }
 
 
+  // Method to show Gallery Section
+  showGallery() {
+    this.navCtrl.navigateForward("/gallery");
+  }
 
+  // Method to show Viña del Mar Weather
+  ionViewWillEnter(){
+    this.weatherService.getWeather().subscribe(weather => {
+      this.weather = weather;
+      console.log(weather)
+    }); 
+  }
+
+  
   // Function to Show or Hide Toolbar.
   onScroll($event: CustomEvent<ScrollDetail>) {
     if ($event && $event.detail && $event.detail.scrollTop) {
