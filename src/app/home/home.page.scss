@@ -50,14 +50,14 @@ button {
 
 .btn-tracking {
   background-image: url('../../assets/media/btn-tracking.PNG');
-  background-repeat: no-repeat;
+  background-repeat: unset;
   background-position: top;
   height: 3.250em;
 }
 
 .btn-mapa {
   background-image: url('../../assets/media/btn-mapa.jpg');
-  background-repeat: no-repeat;
+  background-repeat: unset;
   background-position: center;
   height: 6.063em;
 }
@@ -88,7 +88,7 @@ button {
 
 .div-timer{
   background-image: url('../../assets/media/Reloj.jpg');
-  background-repeat: no-repeat;
+  background-repeat: unset;
   background-position: center;
   text-align: center;
   height: 3.5em;
@@ -138,6 +138,7 @@ button {
 
 .border-grid {
   border: 1px solid #c0c0c0;
+  text-align: center;
 }
 
 .card-app {
@@ -179,10 +180,21 @@ button {
   float: left;
 }
 
-// Sponsors style section
+// Weather Section Style
+
+.weatherImg {
+  min-height: auto;
+  max-width: 70%;
+  max-height: 42px;
+}
+
+// Sponsors Section Style
 
 .sponsorsImg {
-  min-width: 25px;
+  
+  min-height: auto;
+  max-width: 80%;
+  max-height: 29px;
 }
 
 ion-footer {
