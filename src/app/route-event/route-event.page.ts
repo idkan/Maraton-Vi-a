@@ -17,6 +17,7 @@ export class RouteEventPage implements OnInit {
     slides.options = {
       initialSlide: 0,
       speed: 400,
+      autoHeight: true,
     }
   }
 }
