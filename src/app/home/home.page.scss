@@ -183,7 +183,27 @@ button {
   float: left;
 }
 
+/*----------------------------------------------------------*/
 // Weather Section Style
+
+.tempRow {
+  height: fit-content;
+  p {
+    margin-top: 0%;
+  }
+}
+.daysRow{
+  height: fit-content;
+  margin-top: -2%;
+  .lowTemp {
+    margin-top: -5%;
+    opacity: 0.7;
+  }
+}
+
+#weatherP {
+  margin-bottom: 2%;
+}
 
 .weatherImg {
   min-height: auto;

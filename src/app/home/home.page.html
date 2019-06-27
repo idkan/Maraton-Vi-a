@@ -104,42 +104,50 @@
       <div class="border-grid">
         <ion-row class="">
           <ion-col align-self-center >
-            <p><b>Viña del Mar, Chile</b></p>
+            <p id="weatherP"><b>Viña del Mar, Chile</b></p>
           </ion-col>
         </ion-row>
+
         <ion-row>
-          <ion-col *ngIf="weather; else elseBlock">
-              <p><b>{{weather.daypart[0].temperatureHeatIndex[1]}}&deg;C</b></p>
-              <ng-template #elseBlock>{{weather.daypart[0].temperatureHeatIndex[0]}}&deg;C</ng-template>
-              <p>Temperatura</p>
+          <ion-col *ngIf="weather; else elseTemp">
+            <p><b>{{weather.daypart[0].temperatureHeatIndex[1]}}&deg;C</b></p>
+            <ng-template #elseTemp>{{weather.daypart[0].temperatureHeatIndex[0]}}&deg;C</ng-template>
           </ion-col>
-          <ion-col *ngIf="weather; else elseBlock2">
+          <ion-col *ngIf="weather; else elseIcon">
             <img class="weatherImg" src="../../assets/media/PNGs/{{weather.daypart[0].iconCode[1]}}.png" alt="">
-            <p>{{weather.daypart[0].wxPhraseLong[1]}}</p>
-            <ng-template #elseBlock2>
+            <ng-template #elseIcon>
               <img class="weatherImg" src="../../assets/media/PNGs/{{weather.daypart[0].iconCode[0]}}.png" alt="">
-              <p>{{weather.daypart[0].wxPhraseLong[0]}}</p>
             </ng-template>
           </ion-col>
         </ion-row>
-        <ion-row >
+        <ion-row class="tempRow">
+          <ion-col><p>Temperatura</p></ion-col>
+          <ion-col *ngIf="weather; else elseInfo">
+            <p>{{weather.daypart[0].wxPhraseLong[1]}}</p>
+            <ng-template #elseInfo>
+                <p>{{weather.daypart[0].wxPhraseLong[0]}}</p>
+            </ng-template>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="daysRow">
           <ion-col>
               <p>{{weather.dayOfWeek[1]}}</p>
               <img class="weatherImg" src="../../assets/media/PNGs/{{weather.daypart[0].iconCode[2]}}.png" alt="">
               <p>{{weather.temperatureMax[1]}}&deg;C</p>
-              <p>{{weather.temperatureMin[1]}}&deg;C</p>
+              <p class="lowTemp">{{weather.temperatureMin[1]}}&deg;C</p>
           </ion-col>
           <ion-col>
               <p>{{weather.dayOfWeek[2]}}</p>
               <img class="weatherImg" src="../../assets/media/PNGs/{{weather.daypart[0].iconCode[4]}}.png" alt="">
               <p>{{weather.temperatureMax[2]}}&deg;C</p>
-              <p>{{weather.temperatureMin[2]}}&deg;C</p>
+              <p class="lowTemp">{{weather.temperatureMin[2]}}&deg;C</p>
           </ion-col>
           <ion-col>
               <p>{{weather.dayOfWeek[3]}}</p>
               <img class="weatherImg"src="../../assets/media/PNGs/{{weather.daypart[0].iconCode[6]}}.png" alt="">
               <p>{{weather.temperatureMax[3]}}&deg;C</p>
-              <p>{{weather.temperatureMin[3]}}&deg;C</p>
+              <p class="lowTemp">{{weather.temperatureMin[3]}}&deg;C</p>
           </ion-col>
         </ion-row>
       </div>
