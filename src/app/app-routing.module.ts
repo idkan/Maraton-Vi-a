@@ -11,10 +11,6 @@ const routes: Routes = [
     path: 'home',
     loadChildren: './home/home.module#HomePageModule'
   },
-  {
-    path: 'list',
-    loadChildren: './list/list.module#ListPageModule'
-  },
   { path: 'tracking', loadChildren: './tracking/tracking.module#TrackingPageModule' },
   { path: 'route-event', loadChildren: './route-event/route-event.module#RouteEventPageModule' },
   { path: 'gallery', loadChildren: './gallery/gallery.module#GalleryPageModule' }
