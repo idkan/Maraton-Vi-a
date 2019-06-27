@@ -96,7 +96,10 @@ export class HomePage {
 
   // Method to open Register Page on Web Browser
   registerPage() {
-    this.iab.create('https://www.eventrid.cl/prokart/eventos/consalud-maraton-de-vina-del-mar-2019/participantes/inscripcion/iframe','_blank');
+    var options = "beforeload=yes,closebuttoncolor=#000000,hidenavigationbuttons=yes,toolbarcolor=#ffd915,toolbarposition=top";
+
+    this.iab.create('https://www.eventrid.cl/prokart/eventos/consalud-maraton-de-vina-del-mar-2019/participantes/inscripcion/iframe','_blank',options);
+
   }
 
   // Method to select application opening options.
