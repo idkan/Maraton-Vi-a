@@ -11,7 +11,7 @@ export class WeatherService {
   url;
 
   constructor(public http: Http) { 
-    console.log('Hello WeatherService ');
+    //console.log('Hello WeatherService ');
     this.url = 'https://api.weather.com/v3/wx/forecast/daily/5day?geocode=-33.0151602%2C-71.5552889&format=json&units=m&language=es-UN&apiKey=' + this.apiKey;
 
   }

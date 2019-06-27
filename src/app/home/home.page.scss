@@ -50,16 +50,18 @@ button {
 
 .btn-tracking {
   background-image: url('../../assets/media/btn-tracking.PNG');
-  background-repeat: unset;
-  background-position: top;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   height: 3.250em;
 }
 
 .btn-mapa {
   background-image: url('../../assets/media/btn-mapa.jpg');
-  background-repeat: unset;
+  background-repeat: no-repeat;
   background-position: center;
   height: 6.063em;
+  background-size: cover;
 }
 
 .left-icon {
@@ -88,8 +90,9 @@ button {
 
 .div-timer{
   background-image: url('../../assets/media/Reloj.jpg');
-  background-repeat: unset;
+  background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
   text-align: center;
   height: 3.5em;
 
@@ -191,10 +194,29 @@ button {
 // Sponsors Section Style
 
 .sponsorsImg {
-  
   min-height: auto;
   max-width: 80%;
   max-height: 29px;
+}
+
+.sponsorsRow {
+  height: fit-content;
+  p {
+    font-size: .7em;
+    font-style: oblique;
+  }
+  .leftP {
+    text-align: left;
+    padding-left: 10%;
+  }
+  #colabP {
+    text-align: left;
+    padding-left: 20%;
+  }
+}
+
+.sponsorsP {
+  margin-bottom: 1%;
 }
 
 ion-footer {

@@ -143,7 +143,7 @@ export class HomePage {
   ionViewWillEnter(){
     this.weatherService.getWeather().subscribe(weather => {
       this.weather = weather;
-      console.log(weather)
+      //console.log(weather)
     }); 
   }
 

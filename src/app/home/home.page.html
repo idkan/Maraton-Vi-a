@@ -1,13 +1,4 @@
 
-<!-- <ion-header>
-  <ion-toolbar color="secondary"  [class.show-background]="showToolbar">
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-      <ion-title class="ion-text-uppercase">Menu</ion-title>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>-->
-
 <ion-content fullscreen [scrollEvents]="true" (ionScroll)="onScroll($event)">
   <ion-img src="../../assets/media/Header-Modify.png"></ion-img>
 
@@ -113,12 +104,12 @@
       <div class="border-grid">
         <ion-row class="">
           <ion-col align-self-center >
-            <p>Viña del Mar, Chile</p>
+            <p><b>Viña del Mar, Chile</b></p>
           </ion-col>
         </ion-row>
         <ion-row>
           <ion-col *ngIf="weather; else elseBlock">
-              <p>{{weather.daypart[0].temperatureHeatIndex[1]}}&deg;C</p>
+              <p><b>{{weather.daypart[0].temperatureHeatIndex[1]}}&deg;C</b></p>
               <ng-template #elseBlock>{{weather.daypart[0].temperatureHeatIndex[0]}}&deg;C</ng-template>
               <p>Temperatura</p>
           </ion-col>
@@ -146,7 +137,7 @@
           </ion-col>
           <ion-col>
               <p>{{weather.dayOfWeek[3]}}</p>
-              <img class="weatherImg" src="../../assets/media/PNGs/{{weather.daypart[0].iconCode[6]}}.png" alt="">
+              <img class="weatherImg"src="../../assets/media/PNGs/{{weather.daypart[0].iconCode[6]}}.png" alt="">
               <p>{{weather.temperatureMax[3]}}&deg;C</p>
               <p>{{weather.temperatureMin[3]}}&deg;C</p>
           </ion-col>
@@ -156,7 +147,11 @@
 
     <ion-grid padding class="padding-grid">
       <div class="border-grid">
-        <h4 class="ion-text-center">Patrocinadores</h4>
+        <p class="ion-text-center sponsorsP"><b>Patrocinadores</b></p>
+        <ion-row class="sponsorsRow">
+          <ion-col><p class="leftP">Auspician:</p></ion-col>
+          <ion-col><p id="colabP">Colaboran:</p></ion-col>
+        </ion-row>
         <ion-row>
           <ion-col><img class="sponsorsImg" src="../../assets/media/istLogo.png" alt=""></ion-col>
           <ion-col><img class="sponsorsImg" src="../../assets/media/mitsubishiLogo.png" alt=""></ion-col>
@@ -165,6 +160,11 @@
           <ion-col><img src="../../assets/media/gatoradeLogo.png" alt="" class="sponsorsImg"></ion-col>
           <ion-col><img src="../../assets/media/duocucLogo.png" alt="" class="sponsorsImg"></ion-col>
           <ion-col><img src="../../assets/media/sportsaludLogo.png" alt="" class="sponsorsImg"></ion-col>
+        </ion-row>
+        <ion-row class="sponsorsRow">
+          <ion-col><p class="leftP">Patrocinan:</p></ion-col>
+          <ion-col><p>Organizan:</p></ion-col>
+          <ion-col><p>Certifican:</p></ion-col>
         </ion-row>
         <ion-row>
           <ion-col><img src="../../assets/media/vinaEscudo.png" alt="" class="sponsorsImg"></ion-col>
