@@ -3,6 +3,10 @@
 ion-toolbar {
     --background: #ffd915;
     --color: #000000;
+    .ios ion-title {
+        text-align: center;
+        text-transform: uppercase!important;
+    }
 }
 
 .image-container {
