@@ -3,6 +3,9 @@
 ion-toolbar {
     --background: #ffd915;
     --color: #000000;
+    .title-ios {
+        font-size: 15px;
+    }
 }
 
 .swiper-slide {
