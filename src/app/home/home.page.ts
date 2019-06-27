@@ -120,7 +120,7 @@ export class HomePage {
 
   // Method with necessary information to open Facebook app.
   openFacebook(username: string) {
-    this.launchExternalApp('fb://','com.facebook.orca', 'fb://page/?id=', 'https://www.facebook.com/', username);
+    this.launchExternalApp('fb://','com.facebook.katana', 'fb://facewebmodal/f?href=', 'https://www.facebook.com/', username);
   }
 
   // Method with necessary information to open Instagram app.

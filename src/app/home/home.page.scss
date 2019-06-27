@@ -1,4 +1,4 @@
-
+/*----------------------------------------------------------*/
 /* Transparent standard */
 ion-toolbar {
     --background: transparent;
@@ -23,6 +23,11 @@ button {
   width: 100%;
   background-color: #ffffff;
 }
+
+
+/*----------------------------------------------------------*/
+//Base button style
+
 .btn-base{
   color: #f7f6f6;
   font-size: 1.5em;
@@ -40,6 +45,10 @@ button {
   box-shadow: 0 4px 16px rgba(0,0,0,.12);
 }
 
+
+/*----------------------------------------------------------*/
+//  Info button style
+
 .btn-info {
   background-color: #ffd915;
   color: #000000;
@@ -48,6 +57,10 @@ button {
   font-weight: normal;
 }
 
+
+/*----------------------------------------------------------*/
+// Tracking button style
+
 .btn-tracking {
   background-image: url('../../assets/media/btn-tracking.PNG');
   background-repeat: no-repeat;
@@ -55,6 +68,10 @@ button {
   background-size: cover;
   height: 3.250em;
 }
+
+
+/*----------------------------------------------------------*/
+//  Map button style
 
 .btn-mapa {
   background-image: url('../../assets/media/btn-mapa.jpg');
@@ -76,6 +93,10 @@ button {
   right: 0;
 }
 
+
+/*----------------------------------------------------------*/
+// Register button style
+
 .btn-register {
   background-image:url('../../assets/media/btn-inscribete.jpg')!important;
   background-repeat:no-repeat!important;
@@ -87,6 +108,10 @@ button {
   //padding: 10px;
   padding: 5px 10px 6px 10px;
 }
+
+
+/*----------------------------------------------------------*/
+// Timer Section style
 
 .div-timer{
   background-image: url('../../assets/media/Reloj.jpg');
@@ -123,12 +148,19 @@ button {
   margin-top: auto;
 }
 
+
+/*----------------------------------------------------------*/
+// Gallery button style
 .btn-gallery {
   background-image:url('../../assets/media/btn-galeria.PNG')!important;
   background-repeat:no-repeat!important;
   background-position:center!important;
   height: 2.563em;
 }
+
+
+/*----------------------------------------------------------*/
+// Social Media CSS 
 
 .social-media-section button{
   padding: 0;
@@ -182,6 +214,7 @@ button {
   background-color: #002a3e;
   float: left;
 }
+
 
 /*----------------------------------------------------------*/
 // Weather Section Style
