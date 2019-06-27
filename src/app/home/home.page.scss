@@ -191,7 +191,9 @@ button {
   max-height: 42px;
 }
 
-// Sponsors Section Style
+
+/*----------------------------------------------------------*/
+// Sponsors Section CSS
 
 .sponsorsImg {
   min-height: auto;
@@ -219,17 +221,22 @@ button {
   margin-bottom: 1%;
 }
 
+
+/*----------------------------------------------------------*/
+//  Footer CSS 
+
 ion-footer {
-  padding-bottom: 12px;
+  margin: 6px 0 7px 0;
+  ion-title {
+    --color: #aaaaaa;
+    font-size: .67em;
+  }
+  .toolbar-title {
+    height: 30px!important;
+  }
+  img {
+    max-width: 7%;
+    vertical-align: middle;
+  }
 }
 
-ion-footer ion-title {
-  font-size: .56em;
-}
-
-ion-footer ion-img {
-  position: absolute;
-  top: 0;
-  right: 34%;
-  width: 5%;
-}
